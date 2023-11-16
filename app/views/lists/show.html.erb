@@ -1,0 +1,21 @@
+<h1><%= @list.name %></h1>
+<p>Find me in app/views/lists/show.html.erb</p>
+
+<div class="container">
+  <%= link_to "Add a bookmark", new_list_bookmark_path(@list), class:"btn btn-primary" %>
+  <ul class="list-group">
+    <% @movies.each do |m| %>
+      <li class="list-group-item"> <%= m.title %></li>
+    <% end %>
+  </ul>
+
+  <%= link_to "Go back to movies", lists_path, class: "btn btn-secondary" %>
+</div>
+
+<div class="container">
+  <% @bookmarks.each do |b| %>
+  <%= b.comment %>
+  <%= link_to "Destroy bookmark", bookmark_path(b), class: "btn btn-danger btn-small", data: { turbo_method: :delete} %>
+  <% end %>
+
+</div>
