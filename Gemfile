@@ -2,6 +2,9 @@ source "https://rubygems.org"
 
 ruby "3.1.2"
 
+#dotenv
+gem "dotenv-rails"
+
 #bootstrap
 gem "bootstrap", "~> 5.2"
 
