@@ -1,0 +1,17 @@
+<div class="card-product m-3">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+  <div class="card-product-infos">
+    <h2><%= movie.title %></h2>
+    <i class="fa-solid fa-star"></i>
+    <%= movie.rating %>
+      <p><%= movie.overview %></p>
+      <% bookmarks.each do |b| %>
+            <div class="container">
+              <div class="row justify-content-start">
+                <p class="border p-1"> <%= b.comment %> </p>
+                <%= link_to "Destroy bookmark", bookmark_path(b), class: "btn btn-secondary btn-sm m-1", data: { turbo_method: :delete} %>
+              </div>
+            </div>
+          <% end %>
+  </div>
+</div>

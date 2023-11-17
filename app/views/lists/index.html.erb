@@ -1,15 +1,25 @@
+<%= render "/components/navbar" %>
 
 <div class="container-md m-3 p-3">
-    <h1 class="display-6 fw-bolder">Movies for junkies</h1>
-    <h3 class="lead">Check our lists my friend</h3>
+ <%= render "/components/banner" %>
 
-    <%= link_to "Create a list", new_list_path, class:"btn btn-secondary rounded border"%>
 
-  <div class="row justify-content-start">
+
+  <div class="row justify-content-center">
 
       <% @lists.each do |l| %>
-        <div class="col-md-3 m-3 p-3 shadow-lg">
-          <%= link_to "#{l.name}", list_path(l), class: "btn btn-success btn-sm rounded border"%>
+        <div class="col-lg-3 m-3 p-3 shadow-lg">
+          <div class="card-trip">
+            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+            <div class="card-trip-infos">
+              <div>
+                <h2><%= l.name %></h2>
+                <p class="lead">Scariest movies ever</p>
+              </div>
+              <%= link_to "Check it out", list_path(l), class: "btn btn-success btn-sm rounded border"%>
+              <img src="https://kitt.lewagon.com/placeholder/users/bernalisi" class="card-trip-user avatar-bordered" />
+            </div>
+          </div>
         </div>
       <% end %>
 
